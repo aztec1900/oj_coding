@@ -45,6 +45,9 @@ vector<int> findSubstring(string s, vector<string>& words) {
 	return ret;
 }*/
 
+vector<int> findSubstring(string s, vector<string>& words) {
+
+}
 
 
 int main() {
