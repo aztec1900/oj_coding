@@ -16,7 +16,18 @@ vector<string> fullJustify(vector<string>& words, int maxWidth) {
 			len += words[i].length();
 			lineStart = i;
 		}
-		if (i == n - 1 || (i != n - 1 && len + words[i + 1].size() + 1 > maxWidth)) {
+		else
+			len += words[i].length() + 1;
+		if (i == n - 1) {
+			string line;
+			line.append(words[lineStart]);
+			for (int j = lineStart + 1; j <= n - 1; ++j) {
+				line.append(" " + words[j]);
+			}
+			line.append(string(maxWidth - len, ' '));
+			ret.push_back(line);
+		}
+		else if (len + words[i + 1].size() + 1 > maxWidth) {
 			lineEnd = i;
 			int nWords = lineEnd - lineStart + 1;
 			int space, spaceRemain;
@@ -41,18 +52,20 @@ vector<string> fullJustify(vector<string>& words, int maxWidth) {
 					else
 						line.append(string(space, ' '));
 				}
+				else if (nWords == 1)
+					line.append(string(nTotalSpace, ' '));
 			}
 			len = 0;
 			ret.push_back(line);
 		}
-		else
-			len += words[i].length() + 1;
+		
 	}
 	return ret;
 }
 
 int main() {
-	vector<string> words = { "This", "is", "an", "example", "of", "text", "justification." };
-	auto ret = fullJustify(words, 16);
+	//vector<string> words = { "This", "is", "an", "example", "of", "text", "justification." };
+	vector<string> words = { "Imagination", "is", "more", "important", "than", "knowledge." };
+	auto ret = fullJustify(words, 18);
 	return 0;
 }
