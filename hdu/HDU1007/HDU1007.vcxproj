@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4AFF5EAB-294C-4D83-87BC-125FD00469B4}</ProjectGuid>
+    <ProjectGuid>{6E7D9940-2132-4E65-8164-3BE93B09FEA2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>HDU1006</RootNamespace>
+    <RootNamespace>HDU1007</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,7 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
