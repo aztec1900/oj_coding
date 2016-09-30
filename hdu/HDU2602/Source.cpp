@@ -13,7 +13,7 @@ int vol[MAXN], value[MAXN];
 
 int package01(int v, int n) {
 	if (dp[v][n] == -1) {
-		if (v == 0 || n == 0)
+		if (n == 0)
 			dp[v][n] = 0;
 		else {
 			if (v >= vol[n - 1])
@@ -36,7 +36,10 @@ int main() {
 		for (int i = 0; i < n; ++i)
 			scanf("%d", &vol[i]);
 		memset(dp, -1, sizeof(int)*MAXN*MAXN);
-		printf("%d\n", package01(v, n));
+		if (n == 0 || v == 0)
+			printf("0\n");
+		else
+			printf("%d\n", package01(v, n));
 	}
 	return 0;
 }
